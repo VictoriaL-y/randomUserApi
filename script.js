@@ -1,6 +1,7 @@
 //Using fetch:
 
 $(function () {
+    console.log("I'm ready!");
 
     let url ="https://randomuser.me/api/?results=20";
     let p = "";
@@ -10,6 +11,7 @@ $(function () {
     function fetchInformation(url) {
         fetch(url)
         .then((response) =>(response.json()))
+        .catch((error) => (window.alert("error!")))
         .then(function(data) {
 
             data.results.forEach(person => {
@@ -35,6 +37,7 @@ $(function () {
 //Using ajax:
 
 // $(function () {
+//    console.log("I'm ready!");
 //     $.ajax({
 //         url: 'https://randomuser.me/api/?results=20',
 //         dataType: 'json',
